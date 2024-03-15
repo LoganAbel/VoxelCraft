@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>3D</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		canvas {
+			display: block;
+			margin: 0 auto;
+		}
+		.text {
+			margin-top:0;
+			display: block;
+			color: white;
+			text-shadow:
+				-1px -1px 0 #000, 
+				1px -1px 0 #000, 
+				-1px 1px 0 #000, 
+				1px 1px 0 #000;
+		}
+		#debug {
+			position: absolute; 
+			margin: 5px;
+		}
+	</style>
+	<img src="texture.png" style="display:none" id="tex_sheet">
+</head>
+<body oncontextmenu="return false">
+	<div id="debug">
+		<p class="text" id="fps"></p>
+		<p class="text" id="storage"></p>
+	</div>
+	<canvas width="500" height="500"></canvas>
+
+	<script src="glm.js"></script>
+	<script src="webgl.js"></script>
+	<script src="octree2.js"></script>
+	<script src="camera.js"></script>
+	<script src="shaders3.js"></script>
+	<script src="generation.js"></script>
+	<script src="chunkmanager.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
