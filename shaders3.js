@@ -1,3 +1,6 @@
+// Full Screen rendering shaders
+// Should be loaded from non JS file for easier editting and debugging
+
 const vertex_shader = 
 `#version 300 es
 
