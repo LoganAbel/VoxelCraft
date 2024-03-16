@@ -162,6 +162,8 @@ const uniform_block = (program, blockname) => {
 	return self
 }
 
+let resolution = 1;
+
 const resize = setsize => {
 	document.body.onresize = () => {
 		// const dim = 1
@@ -173,8 +175,8 @@ const resize = setsize => {
 
 		canvas.style.width = w + "px"
 		canvas.style.height = h + "px"
-		canvas.width = w
-		canvas.height = h
+		canvas.width = w * resolution
+		canvas.height = h * resolution
 
 		gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 		setsize(gl.canvas.height / gl.canvas.width)
