@@ -37,12 +37,7 @@ const main = async () => {
 			= Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) + " fps"
 
 		if (Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) < 30 && dts[dts.length-1] < 30) {
-			resolution /= 2;
-			document.body.onresize()
-		}
-
-		if (Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) > 55 && dts[dts.length-1] > 55) {
-			resolution *= 2;
+			resolution = .5;
 			document.body.onresize()
 		}
 
