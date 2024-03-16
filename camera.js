@@ -143,6 +143,7 @@ class Camera {
 
 			let dy;
 			if (this.in_flymode) {
+				speed *= 1.5
 				dy = (Controller.Space-Controller.Shift) * speed
 			} else if (in_water) {	
 				const below_tread_level = 
