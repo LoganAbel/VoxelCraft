@@ -1,3 +1,6 @@
+// Abstraction of Webgl, and event manager
+// Controller class could be more abstract
+
 const canvas = document.querySelector("canvas")
 const gl = canvas.getContext("webgl2")
 if (gl === null) throw "[ERR: can't load opengl]"
