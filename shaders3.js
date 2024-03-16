@@ -64,6 +64,8 @@ uint get_child(inout vec3 tmin, inout vec3 tmax, inout ivec3 pos, uint children)
    return children * 8u + uint(dot(dir, vec3(1,2,4)));
 }
 
+uint stack[MAX_DEPTH];
+
 bool trace_octree_rough (Ray ray) {
    vec3 dir = vec3(lessThan(ray.dir, vec3(0.)));
    uint oct_mask = uint(dot(dir, vec3(1,2,4)));
@@ -73,7 +75,6 @@ bool trace_octree_rough (Ray ray) {
    ivec3 pos = ivec3(0);
    uint idx = get_child(tmin, tmax, pos, 0u);
 
-   uint stack[MAX_DEPTH];
    int stacklen = 0;
 
    uint data;
@@ -157,12 +158,13 @@ vec4 color_block(uint i, inout uint medium, vec4 color, vec3 tmin, vec3 tmax,
 
    vec4 new_color = texture(u_tex, (texp + uv) / u_tex_dim);
 
+   uint stack[MAX_DEPTH];
+
    if(dot(vec3(1,3,2), norm) > 0.) {
-      new_color.rgb *= .6 + .4 * dot(norm, normalize(vec3(1,3,2)));
-      //Ray newray = Ray(hitp + norm * pow(.5, float(CUBE_SIZE + 10)), normalize(vec3(1,3,2)));
-      //if(trace_octree_rough(newray)) new_color.rgb *= .5;
+      Ray newray = Ray(hitp + norm * pow(.5, float(CUBE_SIZE + 6)), normalize(vec3(1,3,2)));
+      if(trace_octree_rough(newray)) new_color.rgb *= .5;
    } else {
-      new_color.rgb *= .75 * (.6 + .4 * dot(norm, normalize(vec3(1,3,2))));
+      new_color.rgb *= .75;
    }
 
    color = overlay(color, new_color);
@@ -181,7 +183,6 @@ vec4 trace_octree (Ray ray, vec4 bg) {
    ivec3 pos = ivec3(0);
    uint idx = get_child(tmin, tmax, pos, 0u);
 
-   uint stack[MAX_DEPTH];
    int stacklen = 0;
 
    uint medium = 0u;
