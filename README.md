@@ -1,5 +1,7 @@
 Minecraft Like infinite Voxel Game!
 
+![Image of VoxelCraft Gameplay](https://loganabel.github.io/VoxelCraft/Thumbnail.png)
+
 To run, click [here](https://loganabel.github.io/VoxelCraft/main.html)
 
 Controls:
