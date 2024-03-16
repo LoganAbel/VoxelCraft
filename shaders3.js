@@ -158,8 +158,6 @@ vec4 color_block(uint i, inout uint medium, vec4 color, vec3 tmin, vec3 tmax,
 
    vec4 new_color = texture(u_tex, (texp + uv) / u_tex_dim);
 
-   uint stack[MAX_DEPTH];
-
    if(dot(vec3(1,3,2), norm) > 0.) {
       Ray newray = Ray(hitp + norm * pow(.5, float(CUBE_SIZE + 6)), normalize(vec3(1,3,2)));
       if(trace_octree_rough(newray)) new_color.rgb *= .5;
