@@ -36,8 +36,10 @@ const main = async () => {
 		document.getElementById("fps").innerHTML 
 			= Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) + " fps"
 
-		if (Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) < 30)
+		if (Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) < 30) {
 			resolution /= 2;
+			document.body.onresize()
+		}
 
 		time = performance.now()
 
