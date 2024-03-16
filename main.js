@@ -35,12 +35,6 @@ const main = async () => {
 		dts.shift()
 		document.getElementById("fps").innerHTML 
 			= Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) + " fps"
-
-		if (Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) < 30 && dts[dts.length-1] < 30) {
-			resolution = .5;
-			document.body.onresize()
-		}
-
 		time = performance.now()
 
 		const format = Intl.NumberFormat(undefined, { maximumSignificantDigits: 3 }).format
