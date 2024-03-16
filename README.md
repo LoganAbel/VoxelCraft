@@ -2,7 +2,7 @@ Minecraft Like infinite Voxel Game!
 
 <img src='https://loganabel.github.io/VoxelCraft/Thumbnail.png' width='300'>
 
-To run, click [here](https://loganabel.github.io/VoxelCraft/main.html)
+To run online, click [here](https://loganabel.github.io/VoxelCraft/main.html)
 
 Controls:
  - click on screen to activate controls
