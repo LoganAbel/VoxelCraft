@@ -25,6 +25,7 @@ Possible Future Improvements:
  - Increasing darkness in enclosed areas
  - Ambient Occlusion
  - Block Updates for Water
+ - saving of modified chunks
  - Trees
  - Rendering Efficiency
  - Inventory / Crafting
