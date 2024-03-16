@@ -159,8 +159,8 @@ vec4 color_block(uint i, inout uint medium, vec4 color, vec3 tmin, vec3 tmax,
 
    if(dot(vec3(1,3,2), norm) > 0.) {
       new_color.rgb *= .6 + .4 * dot(norm, normalize(vec3(1,3,2)));
-      Ray newray = Ray(hitp + norm * pow(.5, float(CUBE_SIZE + 10)), normalize(vec3(1,3,2)));
-      if(trace_octree_rough(newray)) new_color.rgb *= .5;
+      //Ray newray = Ray(hitp + norm * pow(.5, float(CUBE_SIZE + 10)), normalize(vec3(1,3,2)));
+      //if(trace_octree_rough(newray)) new_color.rgb *= .5;
    } else {
       new_color.rgb *= .75 * (.6 + .4 * dot(norm, normalize(vec3(1,3,2))));
    }
