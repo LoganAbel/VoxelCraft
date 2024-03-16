@@ -123,7 +123,7 @@ bool trace_octree_rough (Ray ray) {
 }
 
 vec4 color_block(uint i, inout uint medium, vec4 color, vec3 tmin, vec3 tmax, 
-                  ivec3 pos, int stacklen, Ray ray, vec3 dir, float tMIN, float tMAX, uint stack[MAX_DEPTH]) {
+                  ivec3 pos, int stacklen, Ray ray, vec3 dir, float tMIN, float tMAX) {
    if (i == 0u) {
       medium = 0u;
       return color;
@@ -195,7 +195,7 @@ vec4 trace_octree (Ray ray, vec4 bg) {
          data >>= 1u;
          float tc_max = min(min(tmax.x, tmax.y), tmax.z);
          float tc_min = max(max(max(tmin.x, tmin.y), tmin.z), 0.);
-         color = color_block(data, medium, color, tmin, tmax, pos, stacklen, ray, dir, tc_min, tc_max, stack);
+         color = color_block(data, medium, color, tmin, tmax, pos, stacklen, ray, dir, tc_min, tc_max);
 
          color = overlay(color, vec4(bg.rgb,
            1. - pow(.5, float(1 << CUBE_SIZE) * .2 * (max(tc_max, .35) - max(tc_min, .35))))
