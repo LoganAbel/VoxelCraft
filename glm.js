@@ -1,3 +1,4 @@
+// Small Vector Library
 // Currently EXTREMELY Slow. Mostly because of the operation overloading and the disregard for recursive calls to functions
 
 const glm = {}
