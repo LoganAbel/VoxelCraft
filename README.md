@@ -1,6 +1,6 @@
 Minecraft Like infinite Voxel Game!
 
-![Image of VoxelCraft Gameplay](https://loganabel.github.io/VoxelCraft/Thumbnail.png | width=100)
+<img src='[figure/rstudio.png](https://loganabel.github.io/VoxelCraft/Thumbnail.png)' width='100'>
 
 To run, click [here](https://loganabel.github.io/VoxelCraft/main.html)
 
