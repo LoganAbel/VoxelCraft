@@ -64,7 +64,7 @@ uint get_child(inout vec3 tmin, inout vec3 tmax, inout ivec3 pos, uint children)
    return children * 8u + uint(dot(dir, vec3(1,2,4)));
 }
 
-uint stack[MAX_DEPTH];
+uint stack[MAX_DEPTH+1];
 
 bool trace_octree_rough (Ray ray) {
    vec3 dir = vec3(lessThan(ray.dir, vec3(0.)));
