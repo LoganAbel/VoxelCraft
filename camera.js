@@ -144,7 +144,7 @@ class Camera {
 			let dy;
 			if (this.in_flymode) {
 				speed *= 1.5
-				dy = (Controller.Space-Controller.Shift) * speed
+				dy = (Controller.Space-Controller.Shift) * 4.3 * blocksize * (1 + .5 * Controller.Ctrl) * dt / 1000
 			} else if (in_water) {	
 				const below_tread_level = 
 					[...this.hitbox.interval_slice(glm.vec(0,1,0), .1, .999 * blocksize)]
