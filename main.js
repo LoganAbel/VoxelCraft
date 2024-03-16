@@ -41,6 +41,11 @@ const main = async () => {
 			document.body.onresize()
 		}
 
+		if (Math.round(1000/dts.reduce((a,b)=>a+b)*dts.length) > 55 && dts[dts.length-1] > 55) {
+			resolution *= 2;
+			document.body.onresize()
+		}
+
 		time = performance.now()
 
 		const format = Intl.NumberFormat(undefined, { maximumSignificantDigits: 3 }).format
